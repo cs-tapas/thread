@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Thread - Publish News{% endblock %}
+
+{% block content %}
+<div class="container mt-3 mx-auto">
+  <form method="post">
+    {% csrf_token %}
+    <h4>Publish News</h4>
+    <hr>
+
+    <div class="mb-3">
+      <label class="form-label">News Heading</label>
+      <input name="head" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">News Body</label>
+      <textarea name="body" class="form-control" style="height: 150px; resize: none;" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-warning">Publish</button>
+  </form>
+</div>
+{% endblock %}
